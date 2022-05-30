@@ -32,13 +32,14 @@
   </div>
 </template>
 <script>
+import { post } from "../network/request.js";
 export default {
   name: "signin",
   data() {
     let validateUsername = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请输入用户名。"));
-      } else if (value.length <= 5) {
+      } else if (value.length <= 4) {
         callback(new Error("用户名长度不对呀！"));
       } else {
         callback();
@@ -77,12 +78,16 @@ export default {
       this.$refs.signinRef.resetFields();
     },
     submitForm() {
-      this.$refs.signinRef.validate((valid) => {
-        if (valid) {
-          console.log(this.signinForm);
-        } else {
-          return;
-        }
+      this.$refs.signinRef.validate(async (valid) => {
+        if (!valid) return;
+        await post("login", this.signinForm)
+          .then((res) => {
+            if (res.data.meta.status !== 200) return console.log("登陆失败！");
+            console.log("登陆成功！");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       });
     },
   },

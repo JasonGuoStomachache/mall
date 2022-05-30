@@ -9,7 +9,6 @@
         <el-tabs v-model="currentIndex" stretch>
           <el-tab-pane label="登陆" name="login">
             <signin></signin>
-            <!-- <signup></signup> -->
           </el-tab-pane>
           <el-tab-pane label="注册" name="register">
             <signup></signup>
