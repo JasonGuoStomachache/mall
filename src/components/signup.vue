@@ -25,13 +25,13 @@
       <el-form-item prop="insureword">
         <el-input
           type="password"
-          prefix-icon="el-icon-key"
+          prefix-icon="el-icon-lock"
           v-model="signupForm.insureword"
         />
       </el-form-item>
       <el-form-item>
         <div class="btns">
-          <el-button type="primary" @click="submitForm">登录</el-button>
+          <el-button type="primary" @click="submitForm">注册</el-button>
           <el-button type="info" @click="resetForm">重置</el-button>
         </div>
       </el-form-item>
@@ -60,7 +60,7 @@ export default {
     };
     let validateInsureword = (rule, value, callback) => {
       if (value === "") {
-        callback(new Error("请输入密码呢。"));
+        callback(new Error("请再次验证密码呢。"));
       } else if (this.signupForm.password !== this.signupForm.insureword) {
         callback(new Error(" 输入的两次密码不同呢！"));
       }

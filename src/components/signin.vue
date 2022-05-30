@@ -2,7 +2,7 @@
   <div>
     <el-form
       label-width="0px"
-      class="login_form"
+      class="signin_form"
       status-icon
       :model="signinForm"
       :rules="rules"
