@@ -82,8 +82,11 @@ export default {
         if (!valid) return;
         await post("login", this.signinForm)
           .then((res) => {
-            if (res.data.meta.status !== 200) return console.log("登陆失败！");
-            console.log("登陆成功！");
+            if (res.data.meta.status !== 200)
+              return this.$message.error("登陆失败！");
+            this.$message.success("登陆成功！");
+            window.sessionStorage.setItem("token", res.data.data.token);
+            this.$router.push("/Home");
           })
           .catch((err) => {
             console.log(err);
