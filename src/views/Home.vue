@@ -1,6 +1,8 @@
 <template>
   <el-container class="home-container">
-    <el-header>Header</el-header>
+    <el-header>
+      <home-header></home-header>
+    </el-header>
     <el-container>
       <el-aside width="200px">
         <home-menu></home-menu>
@@ -11,16 +13,19 @@
 </template>
 <script>
 import homeMenu from "../components/homeMenu.vue";
+import homeHeader from "../components/homeHeader";
 export default {
   name: "Home",
   components: {
     homeMenu,
+    homeHeader,
   },
 };
 </script>
 <style scoped>
 .el-header {
   background-color: #a498cb;
+  height: 70px;
 }
 .el-aside {
   background-color: #a7bba9;

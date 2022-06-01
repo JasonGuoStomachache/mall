@@ -3,9 +3,7 @@
     <div class="login_box">
       <avatar></avatar>
       <el-card class="box-card">
-        <div slot="header" class="clearfix">
-          <!-- <taobaoshangcheng content="淘宝商城"></taobaoshangcheng> -->
-        </div>
+        <div slot="header" class="clearfix"></div>
         <el-tabs v-model="currentIndex" stretch>
           <el-tab-pane label="登陆" name="login">
             <signin></signin>
