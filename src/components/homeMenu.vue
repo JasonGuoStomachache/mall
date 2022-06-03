@@ -20,17 +20,21 @@
         <el-icon><Menu /></el-icon>
         <span>分类</span>
       </template>
-      <el-menu-item-group title="Group One">
-        <el-menu-item index="/wenxuejingdian01">文学经典</el-menu-item>
-        <el-menu-item index="2-2">item one</el-menu-item>
+      <el-menu-item-group title="文化海洋">
+        <el-menu-item index="/wenxuejingdian">文学经典</el-menu-item>
+        <el-menu-item index="/ertongduwu">儿童读物</el-menu-item>
       </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="2-3">item three</el-menu-item>
+      <el-menu-item-group title="小说世界">
+        <el-menu-item index="/xiaoyuanlianai">校园恋爱</el-menu-item>
+        <el-menu-item index="/xuanhuanxiuzhen">玄幻修真</el-menu-item>
+        <el-menu-item index="/chuanyueshikong">穿越时空</el-menu-item>
+        <el-menu-item index="/kehuanyineng">科幻异能</el-menu-item>
       </el-menu-item-group>
-      <el-submenu index="2-4">
-        <template #title>item four</template>
-        <el-menu-item index="2-4-1">item one</el-menu-item>
-      </el-submenu>
+      <el-menu-item-group title="课本教材">
+        <el-menu-item index="/yiwujiaoyu">义务教育</el-menu-item>
+        <el-menu-item index="/shuxueaoshu">数学奥数</el-menu-item>
+        <el-menu-item index="/zhuanyejineng">专业技能</el-menu-item>
+      </el-menu-item-group>
     </el-submenu>
     <el-menu-item index="3">
       <el-icon><ShoppingCart /></el-icon>

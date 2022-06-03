@@ -3,7 +3,6 @@
     <el-image
       style="width: 200px; height: 250px"
       :src="url"
-      :fit="fit"
       hide-on-click-modal
       :preview-src-list="srcList"
     />

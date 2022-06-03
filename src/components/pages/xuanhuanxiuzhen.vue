@@ -1,6 +1,6 @@
 <template>
   <div style="padding: 0; margin: 0">
-    <h2>文学经典</h2>
+    <h2>玄幻修真</h2>
     <hr />
     <div class="mainContainer">
       <detailsPage v-for="item in 10"></detailsPage>
@@ -17,7 +17,7 @@
 <script>
 import detailsPage from "../detailsPage";
 export default {
-  name: "wenxuejingdian",
+  name: "xuanhuanxiuzhen",
   data() {
     return {
       currentpage: 1,

@@ -1,6 +1,6 @@
 <template>
   <div style="padding: 0; margin: 0">
-    <h2>文学经典</h2>
+    <h2>儿童读物</h2>
     <hr />
     <div class="mainContainer">
       <detailsPage v-for="item in 10"></detailsPage>
@@ -17,7 +17,7 @@
 <script>
 import detailsPage from "../detailsPage";
 export default {
-  name: "wenxuejingdian",
+  name: "ertongduwu",
   data() {
     return {
       currentpage: 1,
@@ -53,7 +53,6 @@ export default {
 .mainContainer {
   width: 100%;
   height: 850px;
-  /* background-color: aliceblue; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
