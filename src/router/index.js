@@ -3,6 +3,8 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const Login = () => import("../views/Login.vue");
 const Home = () => import("../views/Home.vue");
 const lunbotu = () => import("../components/lunbotu.vue");
+const wenxuejingdian01 = () =>
+  import("../components/pages/wenxuejingdian01.vue");
 
 const routes = [
   {
@@ -24,6 +26,11 @@ const routes = [
         path: "/lunbotu",
         name: "lunbotu",
         component: lunbotu,
+      },
+      {
+        path: "/wenxuejingdian01",
+        name: "wenxuejingdian01",
+        component: wenxuejingdian01,
       },
     ],
   },

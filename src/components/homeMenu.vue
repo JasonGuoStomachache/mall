@@ -21,16 +21,16 @@
         <span>分类</span>
       </template>
       <el-menu-item-group title="Group One">
-        <el-menu-item index="2-1">item one</el-menu-item>
+        <el-menu-item index="/wenxuejingdian01">文学经典</el-menu-item>
         <el-menu-item index="2-2">item one</el-menu-item>
       </el-menu-item-group>
       <el-menu-item-group title="Group Two">
         <el-menu-item index="2-3">item three</el-menu-item>
       </el-menu-item-group>
-      <el-sub-menu index="2-4">
+      <el-submenu index="2-4">
         <template #title>item four</template>
         <el-menu-item index="2-4-1">item one</el-menu-item>
-      </el-sub-menu>
+      </el-submenu>
     </el-submenu>
     <el-menu-item index="3">
       <el-icon><ShoppingCart /></el-icon>
