@@ -7,7 +7,9 @@
       <el-aside width="200px">
         <home-menu></home-menu>
       </el-aside>
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -28,7 +30,7 @@ export default {
   height: 70px;
 }
 .el-aside {
-  background-color: #a7bba9;
+  background-color: #545c64;
 }
 .el-main {
   background-color: #fbc451;
