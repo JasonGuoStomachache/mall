@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      username: "郭嘉璇",
+      username: this.$store.state.username,
       searchInput: "",
       islogin: window.sessionStorage.getItem("token"),
     };

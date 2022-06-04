@@ -17,7 +17,7 @@
 <script>
 import detailsPage from "../detailsPage";
 export default {
-  name: "xuanhuanxiuzhen",
+  name: "xiaoyuanlianai",
   data() {
     return {
       currentpage: 1,

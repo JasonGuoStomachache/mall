@@ -3,8 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const Login = () => import("../views/Login.vue");
 const Home = () => import("../views/Home.vue");
 const lunbotu = () => import("../components/lunbotu.vue");
-const wenxuejingdian01 = () =>
-  import("../components/pages/wenxuejingdian01.vue");
+const wenxuejingdian01 = () => import("../components/pages/wenxuejingdian.vue");
 const ertongduwu = () => import("../components/pages/ertongduwu.vue");
 const zhuanyejineng = () => import("../components/pages/zhuanyejineng.vue");
 const yiwujiaoyu = () => import("../components/pages/yiwujiaoyu.vue");

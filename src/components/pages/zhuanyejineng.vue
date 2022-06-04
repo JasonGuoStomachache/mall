@@ -17,7 +17,7 @@
 <script>
 import detailsPage from "../detailsPage";
 export default {
-  name: "zhuanyejineng",
+  name: "xiaoyuanlianai",
   data() {
     return {
       currentpage: 1,
@@ -53,6 +53,7 @@ export default {
 .mainContainer {
   width: 100%;
   height: 850px;
+  /* background-color: aliceblue; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

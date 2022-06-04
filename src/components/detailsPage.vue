@@ -2,23 +2,26 @@
   <div class="banner">
     <el-image
       style="width: 200px; height: 250px"
-      :src="url"
+      :src="bookdata.url"
       hide-on-click-modal
-      :preview-src-list="srcList"
+      :preview-src-list="bookdata.urls"
     />
+    <!-- <img :src="bookdata.url" style="width: 200px; height: 250px" /> -->
     <hr style="width: 250px" />
     <div class="goodsinfo">
       <div class="goodsdescription">
         <h4 class="goodsname">
-          <abbr :title="name">{{ name }} </abbr>
+          <abbr :title="bookdata.name">{{ bookdata.name }} </abbr>
         </h4>
         <h6 class="introduction">
-          <abbr :title="discription">{{ discription }}</abbr>
+          <abbr :title="bookdata.description">{{ bookdata.description }}</abbr>
         </h6>
       </div>
 
       <div class="process">
-        <p style="font-size: 25px; padding: 0; margin: 0">￥ {{ prices }}</p>
+        <p style="font-size: 25px; padding: 0; margin: 0">
+          ￥ {{ bookdata.price }}
+        </p>
         <div style="text-align: center">
           <el-button size="small" circle type="primary"
             ><el-icon><Minus /></el-icon
@@ -33,16 +36,20 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
-      srcList: [
-        "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
-      ],
-      name: "水仙花",
-      prices: 20.0,
-      discription: "miaoshuuisfasfafasfasfasdqa",
-    };
+  props: {
+    bookdata: {
+      type: Object,
+      default() {
+        return {
+          id: "01",
+          name: "三国演义",
+          price: "21",
+          url: "/image/sanguoyanyi01.png",
+          urls: ["/image/sanguoyanyi01.png", "/image/sanguoyanyi02.png"],
+          description: "sanguoyanyi",
+        };
+      },
+    },
   },
 };
 </script>

@@ -33,7 +33,7 @@ export default {
   background-color: #545c64;
 }
 .el-main {
-  background-color: #fbc451;
+  background-color: linear-gradient(to bottom, #ece4d9 0%, #e9dfd1 100%);
 }
 .home-container {
   width: 100%;

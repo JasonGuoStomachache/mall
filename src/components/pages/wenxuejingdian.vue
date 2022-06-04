@@ -3,7 +3,9 @@
     <h2>文学经典</h2>
     <hr />
     <div class="mainContainer">
-      <detailsPage v-for="item in 10"></detailsPage>
+      <div v-for="item in pageLists" :key="item.id">
+        <details-page :bookdata="item"></details-page>
+      </div>
     </div>
     <el-pagination
       background
@@ -18,11 +20,14 @@
 import detailsPage from "../detailsPage";
 export default {
   name: "wenxuejingdian",
+  mounted() {
+    this.lists = this.$store.state.booksinfo;
+  },
   data() {
     return {
       currentpage: 1,
       listsDataNumber: 0,
-      pagelist: [],
+      pageLists: [],
       lists: [],
     };
   },
@@ -36,7 +41,7 @@ export default {
   },
   watch: {
     lists: function name(params) {
-      this.listsDataNumber = lists.length;
+      this.listsDataNumber = this.lists.length;
       this.initPageLists();
     },
   },

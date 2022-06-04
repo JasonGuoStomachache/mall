@@ -86,6 +86,7 @@ export default {
               return this.$message.error("登陆失败！");
             this.$message.success("登陆成功！");
             window.sessionStorage.setItem("token", res.data.data.token);
+            this.$store.mutation("setusername", this.signinForm.username);
             this.$router.push("/Home");
           })
           .catch((err) => {
