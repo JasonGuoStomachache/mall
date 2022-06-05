@@ -46,7 +46,7 @@ export default {
       if (value === "") {
         callback(new Error("请输入用户名。"));
       } else if (value.length <= 5) {
-        callback(new Error("用户名长度不对呀！"));
+        callback(new Error("用户名长度不够呀！"));
       } else {
         callback();
       }
@@ -98,13 +98,18 @@ export default {
       this.$refs.signupRef.resetFields();
     },
     submitForm() {
-      this.$refs.signupRef.validate((valid) => {
-        if (valid) {
-          console.log(this.signupForm);
-        } else {
-          return;
-        }
-      });
+      // this.$refs.signupRef.validate((valid) => {
+      //   console.log("jinrule");
+      //   if (!valid) return;
+      //   this.$message.success("注册成功！");
+      //   window.sessionStorage.setItem("token", "fua29iioujk230khqi82");
+      //   this.$store.commit("setusername", this.signupForm.username);
+      //   this.$router.push("/Home");
+      // });
+      this.$message.success("注册成功！");
+      window.sessionStorage.setItem("token", "fua29iioujk230khqi82");
+      this.$store.commit("setusername", this.signupForm.username);
+      this.$router.push("/Home");
     },
   },
 };

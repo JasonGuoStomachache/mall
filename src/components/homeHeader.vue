@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      username: this.$store.state.username,
+      username: this.$store.state.user.name,
       searchInput: "",
       islogin: window.sessionStorage.getItem("token"),
     };

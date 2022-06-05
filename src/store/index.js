@@ -2,7 +2,21 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    username: "",
+    user: {
+      name: "",
+      sex: "请完善信息",
+      phone: ["请完善信息"],
+      address: ["请完善信息"],
+      description: "请完善信息",
+      cards: [{ bank: "请完善信息", id: "请完善信息" }],
+    },
+    orderlist: [
+      {
+        name: "三国演义",
+        price: 21,
+        count: 1,
+      },
+    ],
     banner: [
       "/lunboimg/01.png",
       "/lunboimg/02.png",
@@ -114,7 +128,32 @@ export default createStore({
   getters: {},
   mutations: {
     setusername(state, username) {
-      state.username = username;
+      state.user.name = username;
+    },
+    addgoods(state, payload) {
+      for (let item of state.orderlist) {
+        if (item.name == payload.name) {
+          item.count++;
+          return;
+        }
+      }
+      state.orderlist.push(payload);
+    },
+    delgoods(state, payload) {
+      for (let item of state.orderlist) {
+        if (item.name == payload.name && item.count !== 1) {
+          item.count--;
+          return;
+        }
+      }
+      let result = state.orderlist.findIndex(
+        (item) => item.name === payload.name
+      );
+      console.log(result);
+      this.commit("rmvgoods", result);
+    },
+    rmvgoods(state, payload) {
+      state.orderlist.splice(payload, 1);
     },
   },
   actions: {},

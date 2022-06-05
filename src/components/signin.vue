@@ -40,7 +40,7 @@ export default {
       if (value === "") {
         callback(new Error("请输入用户名。"));
       } else if (value.length <= 4) {
-        callback(new Error("用户名长度不对呀！"));
+        callback(new Error("用户名长度不够呀！"));
       } else {
         callback();
       }
@@ -86,7 +86,7 @@ export default {
               return this.$message.error("登陆失败！");
             this.$message.success("登陆成功！");
             window.sessionStorage.setItem("token", res.data.data.token);
-            this.$store.mutation("setusername", this.signinForm.username);
+            this.$store.commit("setusername", this.signinForm.username);
             this.$router.push("/Home");
           })
           .catch((err) => {

@@ -12,6 +12,9 @@ const kehuanyineng = () => import("../components/pages/kehuanyineng.vue");
 const xuanhuanxiuzhen = () => import("../components/pages/xuanhuanxiuzhen.vue");
 const chuanyueshikong = () => import("../components/pages/chuanyueshikong.vue");
 const xiaoyuanlianai = () => import("../components/pages/xiaoyuanlianai.vue");
+const gouwuche = () => import("../components/gouwuche.vue");
+const user = () => import("../components/user.vue");
+const Redirect = () => import("../views/Redirect.vue");
 
 const routes = [
   {
@@ -79,6 +82,21 @@ const routes = [
         name: "zhuanyejineng",
         component: zhuanyejineng,
       },
+      {
+        path: "/gouwuche",
+        name: "gouwuche",
+        component: gouwuche,
+      },
+      {
+        path: "/user",
+        name: "user",
+        component: user,
+      },
+      {
+        path: "/Redirect",
+        name: "Redirect",
+        component: Redirect,
+      },
     ],
   },
 ];
@@ -89,4 +107,12 @@ const router = createRouter({
   mode: history,
 });
 
+router.beforeEach((to, from, next) => {
+  const tokenStr = window.sessionStorage.getItem("token");
+  if (!tokenStr && to.path === "/user") {
+    return next("/Login");
+  }
+
+  next();
+});
 export default router;

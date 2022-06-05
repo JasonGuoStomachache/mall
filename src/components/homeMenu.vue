@@ -36,11 +36,11 @@
         <el-menu-item index="/zhuanyejineng">专业技能</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
-    <el-menu-item index="3">
+    <el-menu-item index="/gouwuche">
       <el-icon><ShoppingCart /></el-icon>
       <span>购物车</span>
     </el-menu-item>
-    <el-menu-item index="4">
+    <el-menu-item index="/user">
       <el-icon><setting /></el-icon>
       <span>用户中心</span>
     </el-menu-item>

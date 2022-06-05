@@ -23,10 +23,10 @@
           ￥ {{ bookdata.price }}
         </p>
         <div style="text-align: center">
-          <el-button size="small" circle type="primary"
+          <el-button size="small" circle type="primary" @click="delcount"
             ><el-icon><Minus /></el-icon
           ></el-button>
-          <el-button size="small" circle type="primary"
+          <el-button size="small" circle type="primary" @click="addcount"
             ><el-icon><Plus /></el-icon
           ></el-button>
         </div>
@@ -49,6 +49,23 @@ export default {
           description: "sanguoyanyi",
         };
       },
+    },
+  },
+  methods: {
+    addcount() {
+      this.$store.commit("addgoods", {
+        name: this.bookdata.name,
+        price: this.bookdata.price,
+        count: 1,
+      });
+      this.$message.success(this.bookdata.name + " 已经在购物车等你啦！");
+    },
+    delcount() {
+      this.$store.commit("delgoods", {
+        name: this.bookdata.name,
+        price: this.bookdata.price,
+        count: 1,
+      });
     },
   },
 };
