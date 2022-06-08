@@ -10,7 +10,7 @@
     <el-pagination
       background
       layout="prev, pager, next"
-      :total="100"
+      :total="listsDataNumber"
       v-model:current-page.sync="currentpage"
       @current-change="pagechange"
     />

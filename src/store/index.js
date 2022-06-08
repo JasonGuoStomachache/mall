@@ -10,13 +10,7 @@ export default createStore({
       description: "请完善信息",
       cards: [{ bank: "请完善信息", id: "请完善信息" }],
     },
-    orderlist: [
-      {
-        name: "三国演义",
-        price: 21,
-        count: 1,
-      },
-    ],
+    orderlist: [],
     banner: [
       "/lunboimg/01.png",
       "/lunboimg/02.png",
